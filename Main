@@ -12,13 +12,13 @@ public class Main
         public static void menu(){
 
             Scanner sc = new Scanner(System.in);
-            //the is the entire menu
+            //this is the entire menu
             System.out.println("Welcome to the weapon trainer !");
             System.out.println("Here you can train to use the good weapons at the good moment .");
             System.out.println("Type 1 to train Type 2 to do the test Type 3 to see the keybindings and then enter.");
             System.out.println("Reminders: You can exit your current mode when you are asked for something by entering 4 ");
             
-            int x = sc.nextInt();//taking the choic of the user
+            int x = sc.nextInt();//taking the choice of the user
             switch(x){
                 case 1:
                     System.out.println("You chose the option 1");
