@@ -1,5 +1,5 @@
 //--------------Made by HaxTwoWater----------------
-package fr.haxtwowater.program;
+//package fr.haxtwowater.program; //the package for my IDE
 
 import java.util.Scanner;
 public class Main
