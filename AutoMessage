@@ -1,0 +1,14 @@
+package fr.haxtwowater.program;
+
+public class AutoMessage {
+
+    public static String msgPull(String pull){
+        System.out.println("Oh ! You just pulled out the " + pull);
+        return msgPull(pull);
+
+    }
+    public static String msgInfo(String n){
+        System.out.println("Is caliber is " + n + " pretty good for");
+        return msgInfo(n);
+    }
+}
