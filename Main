@@ -1,0 +1,126 @@
+//--------------Made by HaxTwoWater----------------
+package fr.haxtwowater.program;
+
+import java.util.Scanner;
+public class Main
+{
+    public static void main(String[] args) {
+
+    menu(); //Starting the game
+
+    }
+        public static void menu(){
+
+            Scanner sc = new Scanner(System.in);
+            //the is the entire menu
+            System.out.println("Welcome to the weapon trainer !");
+            System.out.println("Here you can train to use the good weapons at the good moment .");
+            System.out.println("Type 1 to train Type 2 to do the test Type 3 to see the keybindings and then enter.");
+            System.out.println("Reminders: You can exit your current mode when you are asked for something by entering 4 ");
+            
+            int x = sc.nextInt();//taking the choic of the user
+            switch(x){
+                case 1:
+                    System.out.println("You chose the option 1");
+                    System.out.println("You are now in the Training mode !");
+                    System.out.println("You can do what you want and can exit at anytime by pressing 4 and enter it");
+                    int ask1 = sc.nextInt();
+                    trainArea(ask1);//calling the method of the trainArea
+                    break;
+                case 2:
+                    System.out.println("You chose the option 2");
+                    System.out.println("You are now in the Test mode prepare yourself !");
+                    System.out.println("You can exit at anytime by pressing 4 and enter it");
+                    System.out.println("Loading ....");
+                    System.out.println("Loading ....");
+                    System.out.println("Loading ....");
+
+                    testArea(); //calling the method of the testArea in current development
+                    break;
+                case 3:
+                    System.out.println("You chose the option 3");
+                    System.out.println("This is the KeyBindings for more info on weapons go to the train mode !");
+                    System.out.println("You can do what you want and can exit at anytime by pressing 4 and enter it");
+                    String keyBind[][] = {
+
+                            {
+                                    "1-Shotgun",
+                                    "2-AR (Assault-Rifle)",
+                                    "3-Sniper",
+                                    "4-Exit",
+                            }
+
+
+                    };
+                    System.out.println(keyBind[0][0]); // showing the list of the key Bindings what is useful when
+                    System.out.println(keyBind[0][1]); // your in the train mode or test mode
+                    System.out.println(keyBind[0][2]);
+                    System.out.println(keyBind[0][3]);
+                    System.out.println("To Exit this menu you can enter any key :D");
+                    int ask4 = sc.nextInt();
+                    switch(ask4){
+                        default:
+                            menu();
+
+                    }
+
+                default: // for who doesn't press 1,2 or 3
+                    System.out.println("Oopsi doopsi you didn't enter an allowed value !");
+                    System.out.println("Reminder: 1(Training mode) 2(Test mode) 3(KeyBindings)");
+                    System.out.println("");
+                    System.out.println("");
+                    System.out.println("");
+
+                    menu();  
+
+
+            }
+        }
+    public static void trainArea(int b){
+        Scanner sc = new Scanner(System.in);
+        //AutoMessage msg = new AutoMessage(); //tried to create a class for automessage but it doesn't work well so 
+        String weapons[] = {"", " Sniper", " Shotgun", " AR"}; 
+        double caliber[] = {0, 12.7, 42.0, 7.62};
+        String autoMsg = "Oh ! You just pulled out the"; // here I did something really more simple 
+        String autoInfo = "Is caliber is " + caliber[b] + "mm pretty good for"; // here too
+        // I uploaded my AutoMessage class too if you want to take a look it can be helpful
+        
+            switch(b){
+                case 1: //showing all the weapons and the info 
+                    System.out.println(autoMsg + weapons[b]);
+                    System.out.println(autoInfo + "1 Long-Range.");
+                    int ask5 = sc.nextInt();
+                    trainArea(ask5);
+
+                    break;
+                case 2:
+                    System.out.println(autoMsg + weapons[b]);
+                    System.out.println(autoInfo + " Close-Range.");
+                    int ask6 = sc.nextInt();
+                    trainArea(ask6);
+                    break;
+                case 3:
+                    System.out.println(autoMsg + weapons[b]);
+                    System.out.println(autoInfo + " Mid-Range.");
+                    int ask7 = sc.nextInt();
+                    trainArea(ask7);
+                    break;
+                case 4:
+                    menu(); //actually got a problem with this option it doesn't work :/
+                    break;  // if you can help me there here too it will help me so much (type 1 and then 4 to see the problem)
+
+
+        }
+
+
+        }
+    public static void testArea(){
+            System.out.println("Coming Soon ... Sorry :p"); //Here I'll do some test for beginners and advance 
+        // like "Oh sh*t ! There is a zombie so close of me please save me ! " (And for beginners a tips like : "he said 
+        // the zombie was close to him chose a weapon that can save him quickly" ) And then the user need to chose the good weapon :D
+        }
+
+
+
+}
+//--------------Made by HaxTwoWater----------------
