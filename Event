@@ -1,0 +1,20 @@
+package fr.haxtwowater.program;
+
+public class Event {
+
+
+    public static void sniperEvent(){
+        System.out.println("You picked the Sniper");
+        return;
+    }
+
+    public static void shotgunEvent(){
+        System.out.println("You picked the ShotGun");
+        return;
+    }
+
+    public static void arEvent(){
+        System.out.println("You picked the AR (Assault-Rifle)");
+        return;
+    }
+}
