@@ -1,0 +1,36 @@
+package fr.haxtwowater.program;
+import java.util.Scanner;
+public class TestEvent {
+    public static void question(int x, int y) {
+        Scanner sc = new Scanner(System.in);
+        Event event = new Event();
+
+        switch (x){
+            case 1:
+                event.shotgunEvent();
+                check(x,y);
+                break;
+            case 2:
+                event.arEvent();
+                check(x,y);
+                break;
+            case 3:
+                event.sniperEvent();
+                check(x,y);
+                break;
+        }
+
+;    }
+    public static void check(int x, int y){
+
+        if(x == y){
+            System.out.println("You pick the correct answer");
+
+        }else{
+            System.out.println("You pick the wrong answer");
+
+        }
+
+    }
+
+}
