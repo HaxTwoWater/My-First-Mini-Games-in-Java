@@ -1,5 +1,5 @@
 //--------------Made by HaxTwoWater----------------
-//package fr.haxtwowater.program; //the package for my IDE
+package fr.haxtwowater.program;
 
 import java.util.Scanner;
 public class Main
@@ -17,7 +17,7 @@ public class Main
             System.out.println("Here you can train to use the good weapons at the good moment .");
             System.out.println("Type 1 to train Type 2 to do the test Type 3 to see the keybindings and then enter.");
             System.out.println("Reminders: You can exit your current mode when you are asked for something by entering 4 ");
-            
+
             int x = sc.nextInt();//taking the choice of the user
             switch(x){
                 case 1:
@@ -44,9 +44,9 @@ public class Main
                     String keyBind[][] = {
 
                             {
-                                    "1-Shotgun",
+                                    "1-Sniper",
                                     "2-AR (Assault-Rifle)",
-                                    "3-Sniper",
+                                    "3-Shotgun",
                                     "4-Exit",
                             }
 
@@ -71,24 +71,24 @@ public class Main
                     System.out.println("");
                     System.out.println("");
 
-                    menu();  
+                    menu();
 
 
             }
         }
     public static void trainArea(int b){
         Scanner sc = new Scanner(System.in);
-        //AutoMessage msg = new AutoMessage(); //tried to create a class for automessage but it doesn't work well so 
-        String weapons[] = {"", " Sniper", " Shotgun", " AR"}; 
+        //AutoMessage msg = new AutoMessage(); //tried to create a class for automessage but it doesn't work well so
+        String weapons[] = {"", " Sniper", " Shotgun", " AR"};
         double caliber[] = {0, 12.7, 42.0, 7.62};
-        String autoMsg = "Oh ! You just pulled out the"; // here I did something really more simple 
+        String autoMsg = "Oh ! You just pulled out the"; // here I did something really more simple
         String autoInfo = "Is caliber is " + caliber[b] + "mm pretty good for"; // here too
         // I uploaded my AutoMessage class too if you want to take a look it can be helpful
-        
+
             switch(b){
-                case 1: //showing all the weapons and the info 
+                case 1: //showing all the weapons and the info
                     System.out.println(autoMsg + weapons[b]);
-                    System.out.println(autoInfo + "1 Long-Range.");
+                    System.out.println(autoInfo + " Long-Range.");
                     int ask5 = sc.nextInt();
                     trainArea(ask5);
 
@@ -115,12 +115,279 @@ public class Main
 
         }
     public static void testArea(){
-            System.out.println("Coming Soon ... Sorry :p"); //Here I'll do some test for beginners and advance 
-        // like "Oh sh*t ! There is a zombie so close of me please save me ! " (And for beginners a tips like : "he said 
-        // the zombie was close to him chose a weapon that can save him quickly" ) And then the user need to chose the good weapon :D
+           // System.out.println("Coming Soon ... Sorry :p"); //Here I'll do some test for beginners and advance
+        // like "Oh sh*t ! There is a zombie so close of me please save me ! " (And for beginners a tips like : "he said
+        // the zombie was close to him chose a weapon that can save him quickly" ) And then the user need to choose the good weapon :D
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Keep on mind: this game is in development so there is only 5 five different situation ");
+        System.out.println("Update soon but it's taking time :p ");
+        System.out.println("There is two difficulty level one Easy the easiest one who give you tips,");
+        System.out.println("And the other one Normal don't give you tips but is quite the same as the easy one.");
+        System.out.println("So type 1 for the Easy level and 2 for the Normal one and type anything to get back to the menu.");
+        int ask8 = sc.nextInt();
+        switch(ask8){
+            case 1:
+                System.out.println("You chosed the Easy level get ready !");
+                System.out.println("Loading ....");
+                System.out.println("Loading ....");
+                System.out.println("Loading ....");
+                testEasy();
+                break;
+            case 2:
+                System.out.println("You chosed the Normal level get ready !");
+                System.out.println("Loading ....");
+                System.out.println("Loading ....");
+                System.out.println("Loading ....");
+                testNormal();
+                break;
+            default:
+                menu();
+                break;
+
         }
 
 
+        }
+    public static void testEasy(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("------------The Easy level has started------------");
+        System.out.println("You'll have many questions from situations and you'll need to pick the correct answers.");
+        System.out.println("There is 5 questions and for each correct answers you'll get 1 point.");
+        System.out.println("--------------------Enjoy !!!--------------------");
+
+
+
+        System.out.println("A day you come back at your house , your long day as a sheriff is finally over. ");
+        System.out.println("Finally back at your home , you ear creepy noises coming from the next floor");
+        System.out.println("You stay in front of the stairs and see a not human thing coming from the top ");
+        System.out.println("You not believe it this is your wife she was turned in zombie");
+        System.out.println("After a moment you finally decide to kill her");
+        System.out.println("You going back to your garage and see few weapons ");
+        System.out.println("You taking 3 of them a ShotGun a AR and a Sniper");
+        System.out.println("This is now the fatal moment ");
+
+        System.out.println("Tips:Type 1(ShotGun) , 2(AR) or 3(Sniper) to use different weapons");
+        System.out.println("Another tips: She is close to you ");
+        TestEvent test = new TestEvent();
+        int sit1 = sc.nextInt();
+        test.question(sit1,1);
+        int score = 0;
+        if(sit1 == 1){
+            ++score;
+            System.out.println("You win a point !");
+            System.out.println("You now have  a total of " + score + " point");
+        }else{
+            if(score == 0){
+                System.out.println("You have a score of " + score + " so you didn't get nothing and lost nothing");
+            }else {
+                --score;
+                System.out.println("You lost a point ..");
+                System.out.println("You now have  a total of " + score + " point");
+            }
+        }
+        System.out.println("You know killed your wife but the situation get even worse ..");
+        System.out.println("You see trough the window a lot of zombie now walking in the street");
+        System.out.println("Many zombie are really far from you but some of them are now that far");
+        System.out.println("They getting closer and closer so you decide to kill them");
+
+        System.out.println("Tips:They are mid-range to you");
+        int sit2 = sc.nextInt();
+        test.question(sit2,2);
+        if (sit2 == 2){
+            ++score;
+            System.out.println("You win a point !");
+            System.out.println("You now have  a total of " + score + " point");
+        }else{
+            if(score == 0){
+                System.out.println("You have a score of " + score + " so you didn't get nothing and lost nothing");
+            }else {
+                --score;
+                System.out.println("You lost a point ..");
+                System.out.println("You now have  a total of " + score + " point");
+            }
+        }
+        System.out.println("Oh ! Nice shot ! But the other one who was really far eared the noise of the shot");
+        System.out.println("Prepare to kill them before they get to close");
+        System.out.println("Tips: They are far from you");
+        int sit3 = sc.nextInt();
+        test.question(sit3,3);
+        if(sit3 == 3){
+            ++score;
+            System.out.println("You win a point !");
+            System.out.println("You now have  a total of " + score + " point");
+        }else{
+            if(score == 0){
+                System.out.println("You have a score of " + score + " so you didn't get nothing and lost nothing");
+            }else {
+                --score;
+                System.out.println("You lost a point ..");
+                System.out.println("You now have  a total of " + score + " point");
+            }
+        }
+        System.out.println("Damn your not the sheriff for nothing really good shot !");
+        System.out.println("You need to move on and search for a safe spot ");
+        System.out.println("You going to your pickup and saw a zombie trying to climb on");
+        System.out.println("Kill him with the good weapons");
+        System.out.println("Tips: He is close to you");
+        int sit4 = sc.nextInt();
+        test.question(sit4,1);
+        if (sit4 == 1){
+            ++score;
+            System.out.println("You win a point !");
+            System.out.println("You now have  a total of " + score + " point");
+        }else{
+            if(score == 0){
+                System.out.println("You have a score of " + score + " so you didn't get nothing and lost nothing");
+            }else {
+                --score;
+                System.out.println("You lost a point ..");
+                System.out.println("You now have  a total of " + score + " point");
+            }
+        }
+        System.out.println("Now in your pickup you decide to drive away from your house and your city");
+        System.out.println("But on the road you an horde of zombie they are too many to carkill them ");
+        System.out.println("So you decide to mid distance from them to stop and kill them");
+        System.out.println("Tips: They are far but not enough to bring your Sniper");
+        int sit5 = sc.nextInt();
+        test.question(sit5,2);
+        if(sit5 == 2){
+            ++score;
+            System.out.println("You win a point !");
+            System.out.println("You now have  a total of " + score + " point");
+        }else{
+            if(score == 0){
+                System.out.println("You have a score of " + score + " so you didn't get nothing and lost nothing");
+            }else {
+                --score;
+                System.out.println("You lost a point ..");
+                System.out.println("You now have  a total of " + score + " point");
+            }
+        }
+        System.out.println("The test mode is now finish you got a total point of " + score + " !");
+        System.out.println("You'll be now get back to first menu ");
+        System.out.println("I wish you enjoyed this demo");
+        menu();
+    }
+    public static void testNormal(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("-----------The Normal level has started-----------");
+        System.out.println("You'll have many questions from situations and you'll need to pick the correct answers.");
+        System.out.println("There is 5 questions and for each correct answers you'll get 1 point.");
+        System.out.println("--------------------Enjoy !!!--------------------");
+
+
+        System.out.println("A day you come back at your house , your long day as a sheriff is finally over. ");
+        System.out.println("Finally back at your home , you ear creepy noises coming from the next floor");
+        System.out.println("You stay in front of the stairs and see a not human thing coming from the top ");
+        System.out.println("You not believe it this is your wife she was turned in zombie");
+        System.out.println("After a moment you finally decide to kill her");
+        System.out.println("You going back to your garage and see few weapons ");
+        System.out.println("You taking 3 of them a ShotGun a AR and a Sniper");
+        System.out.println("This is now the fatal moment ");
+        TestEvent test = new TestEvent();
+        int sit1 = sc.nextInt();
+        test.question(sit1,1);
+        int score = 0;
+        if(score == 1){
+            ++score;
+            System.out.println("You win a point !");
+            System.out.println("You now have  a total of " + score + " point");
+        }else{
+            if(score == 0){
+                System.out.println("You have a score of " + score + " so you didn't get nothing and lost nothing");
+            }else {
+                --score;
+                System.out.println("You lost a point ..");
+                System.out.println("You now have  a total of " + score + " point");
+            }
+        }
+        System.out.println("You know killed your wife but the situation get even worse ..");
+        System.out.println("You see trough the window a lot of zombie now walking in the street");
+        System.out.println("Many zombie are really far from you but some of them are now that far");
+        System.out.println("They getting closer and closer so you decide to kill them");
+        int sit2 = sc.nextInt();
+        test.question(sit2,2);
+        if (sit2 == 2){
+            ++score;
+            System.out.println("You win a point !");
+            System.out.println("You now have  a total of " + score + " point");
+        }else{
+            if(score == 0){
+                System.out.println("You have a score of " + score + " so you didn't get nothing and lost nothing");
+            }else {
+                --score;
+                System.out.println("You lost a point ..");
+                System.out.println("You now have  a total of " + score + " point");
+            }
+        }
+        System.out.println("Oh ! Nice shot ! But the other one who was really far eared the noise of the shot");
+        System.out.println("Prepare to kill them before they get to close");
+        int sit3 = sc.nextInt();
+        test.question(sit3,3);
+        if(sit3 == 3){
+            ++score;
+            System.out.println("You win a point !");
+            System.out.println("You now have  a total of " + score + " point");
+        }else{
+            if(score == 0){
+                System.out.println("You have a score of " + score + " so you didn't get nothing and lost nothing");
+            }else {
+                --score;
+                System.out.println("You lost a point ..");
+                System.out.println("You now have  a total of " + score + " point");
+            }
+        }
+        System.out.println("Damn your not the sheriff for nothing really good shot !");
+        System.out.println("You need to move on and search for a safe spot ");
+        System.out.println("You going to your pickup and saw a zombie trying to climb on");
+        System.out.println("Kill him with the good weapons");
+        int sit4 = sc.nextInt();
+        test.question(sit4,1);
+        if (sit4 == 1){
+            ++score;
+            System.out.println("You win a point !");
+            System.out.println("You now have  a total of " + score + " point");
+        }else{
+            if(score == 0){
+                System.out.println("You have a score of " + score + " so you didn't get nothing and lost nothing");
+            }else {
+                --score;
+                System.out.println("You lost a point ..");
+                System.out.println("You now have  a total of " + score + " point");
+            }
+        }
+        System.out.println("Now in your pickup you decide to drive away from your house and your city");
+        System.out.println("But on the road you an horde of zombie they are too many to carkill them ");
+        System.out.println("So you decide to mid distance from them to stop and kill them");
+        int sit5 = sc.nextInt();
+        test.question(sit5,2);
+        if(sit5 == 2){
+            ++score;
+            System.out.println("You win a point !");
+            System.out.println("You now have  a total of " + score + " point");
+        }else{
+            if(score == 0){
+                System.out.println("You have a score of " + score + " so you didn't get nothing and lost nothing");
+            }else {
+                --score;
+                System.out.println("You lost a point ..");
+                System.out.println("You now have  a total of " + score + " point");
+            }
+        }
+        System.out.println("The test mode is now finish you got a total point of " + score + " !");
+        System.out.println("You'll be now get back to first menu ");
+        System.out.println("I wish you enjoyed this demo");
+        menu();
+
+    }
+    /*public static void score(int v, int w, int val){
+        val = 0;
+        if(v == w){
+            ++val;
+            System.out.println("You win a point !");
+            System.out.println("You now have  " + val + " point");
+        }
+    }*/
 
 }
 //--------------Made by HaxTwoWater----------------
